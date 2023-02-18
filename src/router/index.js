@@ -21,8 +21,14 @@ const routes = [
       // webpackPretch를 넣어주면 status는 200으로 바뀌고, (원래는 304로 표시됨) 그리고, 캐시에 저장해줌. 개발자도구 <head>에 확인해보면 <link>로 prefetch되어있음. about 라우터를 클릭하면 캐시에 적용된 about.js를 사용하기 때문에 캐시에 있으므로 바로 사용하므로 사용자가 더 빠른 페이지를 받아볼 수 있음.
       // 사용자가 한번이상 들어갈 페이지 혹은 용량이 큰 페이지에 사용해주는 것이 좋음
       // 하지만 about을 사용하지 않을 수도 있기 때문에 꼭 들어가는 페이지에만 prefetch를 해주는 것이 좋음.
+      import(/* webpackChunkName: "about"  */ '../views/AboutView.vue')
+  },
+  {
+    path: '/databinding/string',
+    name: '/databinding/stringView',
+    component: () =>
       import(
-        /* webpackChunkName: "about" , webpackPretch:true */ '../views/AboutView.vue'
+        /* webpackChunkName: "databinding" , webpackPretch:true */ '../views/1_databinding/DataBindingStringView.vue'
       )
   }
 ]
