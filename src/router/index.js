@@ -25,10 +25,18 @@ const routes = [
   },
   {
     path: '/databinding/string',
-    name: '/databinding/stringView',
+    name: '/databindingStringView',
     component: () =>
       import(
-        /* webpackChunkName: "databinding" , webpackPretch:true */ '../views/1_databinding/DataBindingStringView.vue'
+        /* webpackChunkName: "databinding" , webpackPrefetch:true */ '../views/1_databinding/DataBindingStringView.vue'
+      )
+  },
+  {
+    path: '/databinding/html',
+    name: '/databindingHtmlView',
+    component: () =>
+      import(
+        /* webpackChunkName: "databinding" , webpackPrefetch:true */ '../views/1_databinding/DataBindingHtmlView.vue'
       )
   }
 ]
